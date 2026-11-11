@@ -1,0 +1,713 @@
+/* =========================================================
+   STANDINGS PAGE
+========================================================= */
+
+.standings-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 8px 4px 50px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.standings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.standings-header h1 {
+  margin: 8px 0 8px;
+  color: #ffffff;
+  font-size: clamp(32px, 3vw, 46px);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.standings-header p {
+  margin: 0;
+  color: #7f899c;
+  font-size: 16px;
+}
+
+.section-label {
+  color: #ff1616;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   SEASON BADGE
+========================================================= */
+
+.season-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 18px;
+  border: 1px solid #554516;
+  border-radius: 30px;
+  background: rgba(73, 55, 13, 0.2);
+  color: #e8b929;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   LIVE DATA BAR
+========================================================= */
+
+.standings-live-bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 22px;
+  padding: 12px 15px;
+
+  border: 1px solid #252a33;
+  border-radius: 10px;
+
+  background: #111319;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  background: #54e58b;
+  box-shadow:
+    0 0 0 3px rgba(84, 229, 139, 0.08),
+    0 0 12px rgba(84, 229, 139, 0.7);
+}
+
+.standings-session {
+  flex: 1;
+
+  color: #707a8d;
+  font-size: 11px;
+}
+
+.standings-session strong {
+  color: #d9dde5;
+}
+
+.standings-session span {
+  margin: 0 8px;
+  color: #3f4550;
+}
+
+.refresh-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border: 1px solid #303640;
+  border-radius: 7px;
+
+  background: #171a20;
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.refresh-button:hover {
+  border-color: #e10600;
+  background: #1d2027;
+}
+
+.refresh-button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.standings-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(320px, 0.95fr);
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.standings-card {
+  min-width: 0;
+
+  border: 1px solid #282d36;
+  border-radius: 15px;
+
+  background: #11141a;
+
+  overflow: hidden;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 38px 48px 30px;
+
+  color: #ff1515;
+}
+
+.card-heading h2 {
+  margin: 8px 0 0;
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.card-eyebrow {
+  color: #ff1515;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   DRIVER TABLE HEADER
+========================================================= */
+
+.driver-table-header {
+  display: grid;
+
+  grid-template-columns:
+    72px
+    minmax(230px, 1.6fr)
+    minmax(130px, 1fr)
+    70px
+    70px;
+
+  align-items: center;
+
+  margin: 0 26px;
+
+  padding: 13px 22px;
+
+  background: #171a21;
+
+  color: #70798b;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   DRIVER ROW
+========================================================= */
+
+.driver-list {
+  padding: 0 26px 15px;
+}
+
+.driver-row {
+  display: grid;
+
+  grid-template-columns:
+    72px
+    minmax(230px, 1.6fr)
+    minmax(130px, 1fr)
+    70px
+    70px;
+
+  align-items: center;
+
+  min-height: 66px;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid #252a32;
+}
+
+.driver-row:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   POSITION
+========================================================= */
+
+.driver-position {
+  display: flex;
+  align-items: center;
+}
+
+.position-number,
+.position-medal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.position-number {
+  background: #20252f;
+  color: #ffffff;
+}
+
+.position-1 {
+  background: linear-gradient(
+    145deg,
+    #ffe46b,
+    #d69d00
+  );
+  color: #111111;
+}
+
+.position-2 {
+  background: linear-gradient(
+    145deg,
+    #f1f3f5,
+    #a9adb4
+  );
+  color: #151515;
+}
+
+.position-3 {
+  background: linear-gradient(
+    145deg,
+    #d88932,
+    #8e4914
+  );
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DRIVER INFO
+========================================================= */
+
+.driver-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.driver-photo,
+.driver-photo-placeholder {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  border-radius: 7px;
+
+  object-fit: cover;
+}
+
+.driver-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.driver-info strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.driver-info span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #687285;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.driver-team {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #8993a6;
+
+  font-size: 11px;
+
+  min-width: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-dot {
+  width: 4px;
+  height: 24px;
+
+  flex: 0 0 4px;
+
+  border-radius: 3px;
+}
+
+
+/* =========================================================
+   WINS
+========================================================= */
+
+.driver-wins {
+  color: #a5adbc;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.driver-points {
+  color: #ff1717;
+
+  font-family: monospace;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.driver-points small {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #535c6d;
+
+  font-family: inherit;
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CONSTRUCTOR
+========================================================= */
+
+.constructor-list {
+  padding: 0 48px 25px;
+}
+
+.constructor-row {
+  display: grid;
+
+  grid-template-columns:
+    42px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-height: 82px;
+
+  border-bottom: 1px solid #272c35;
+}
+
+.constructor-row:last-child {
+  border-bottom: none;
+}
+
+.constructor-position {
+  color: #ff1616;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.constructor-info {
+  min-width: 0;
+}
+
+.constructor-info strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.constructor-info span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #687285;
+
+  font-size: 9px;
+}
+
+.constructor-points {
+  color: #ffffff;
+
+  font-family: monospace;
+
+  font-size: 19px;
+  font-weight: 900;
+
+  text-align: right;
+}
+
+.constructor-points small {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #555e6e;
+
+  font-family: inherit;
+
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.standings-loading {
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #8a94a7;
+
+  font-size: 13px;
+}
+
+.loading-spin {
+  animation: standings-spin 1s linear infinite;
+}
+
+@keyframes standings-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.standings-error {
+  max-width: 600px;
+
+  margin: 80px auto;
+  padding: 30px;
+
+  display: flex;
+  gap: 17px;
+
+  border: 1px solid #472020;
+  border-radius: 12px;
+
+  background: #171114;
+
+  color: #ff3535;
+}
+
+.standings-error h3 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+}
+
+.standings-error p {
+  margin: 0 0 18px;
+
+  color: #858e9f;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.retry-button {
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #e10600;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .standings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .driver-table-header,
+  .driver-row {
+    grid-template-columns:
+      60px
+      minmax(210px, 1.5fr)
+      minmax(120px, 1fr)
+      60px
+      70px;
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .standings-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .standings-live-bar {
+    flex-wrap: wrap;
+  }
+
+  .standings-session {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .driver-table-header {
+    display: none;
+  }
+
+  .driver-row {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr)
+      auto;
+
+    padding: 12px 8px;
+  }
+
+  .driver-team,
+  .driver-wins {
+    display: none;
+  }
+
+  .driver-list {
+    padding: 0 15px 15px;
+  }
+
+  .constructor-list {
+    padding: 0 25px 20px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .standings-page {
+    padding-bottom: 30px;
+  }
+
+  .standings-header h1 {
+    font-size: 30px;
+  }
+
+  .season-badge {
+    padding: 10px 14px;
+  }
+
+  .card-heading {
+    padding: 25px 22px 22px;
+  }
+
+  .constructor-list {
+    padding: 0 22px 20px;
+  }
+
+}

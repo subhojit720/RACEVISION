@@ -1,0 +1,494 @@
+/* =========================================
+   F1 TEAMS PAGE
+========================================= */
+
+.teams-page {
+  width: 100%;
+  padding: 8px 0 60px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.teams-hero {
+  margin-bottom: 82px;
+}
+
+.teams-hero h1 {
+  margin: 0 0 18px;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  color: #ffffff;
+}
+
+.teams-hero p {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #d5d8df;
+}
+
+
+/* =========================================
+   TEAMS GRID
+========================================= */
+
+.f1-teams-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 30px;
+}
+
+
+/* =========================================
+   TEAM CARD
+========================================= */
+
+.f1-team-card {
+  position: relative;
+
+  height: 320px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--team-dark) 0%,
+      var(--team-color) 100%
+    );
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.f1-team-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 22px 45px
+    rgba(0, 0, 0, 0.38);
+}
+
+
+/* =========================================
+   DOT PATTERN
+========================================= */
+
+.team-dots {
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 72%;
+
+  height: 58%;
+
+  opacity: 0.42;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.75) 1.4px,
+      transparent 1.4px
+    );
+
+  background-size: 7px 7px;
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 45%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 45%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.team-content {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 34px 36px;
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   TOP SECTION
+========================================= */
+
+.team-top {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+}
+
+
+/* =========================================
+   TEAM NAME
+========================================= */
+
+.team-top h2 {
+  margin: 0 0 20px;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 29px;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   TEAM LOGO
+========================================= */
+
+.team-logo-circle {
+  width: 62px;
+
+  height: 62px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.32);
+
+  backdrop-filter: blur(8px);
+}
+
+
+.team-logo-circle img {
+  width: 42px;
+
+  height: 42px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================
+   DRIVERS
+========================================= */
+
+.team-drivers-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  flex-wrap: wrap;
+}
+
+
+.driver-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+.driver-info strong {
+  font-weight: 800;
+}
+
+
+/* =========================================
+   DRIVER PROFILE PHOTO
+========================================= */
+
+.driver-photo {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+
+/* DRIVER IMAGE */
+
+.driver-photo img {
+  width: 180%;
+
+  max-width: none;
+
+  height: auto;
+
+  object-fit: cover;
+
+  /* This moves the driver's face into view */
+  transform: translateY(-2%);
+
+  display: block;
+}
+
+
+/* =========================================
+   CAR AREA
+========================================= */
+
+.team-car-container {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 18px;
+
+  width: 100%;
+
+  height: 210px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  transform: translateX(-50%);
+
+  z-index: 6;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CAR IMAGE
+========================================= */
+
+.team-car {
+  position: relative;
+
+  width: 86%;
+
+  max-width: 620px;
+
+  height: auto;
+
+  max-height: 210px;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 18px 13px
+      rgba(0, 0, 0, 0.5)
+    );
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.f1-team-card:hover .team-car {
+  transform:
+    scale(1.04)
+    translateX(8px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .f1-team-card {
+    height: 310px;
+  }
+
+  .team-content {
+    padding: 30px;
+  }
+
+  .team-car-container {
+    height: 200px;
+  }
+
+  .team-car {
+    width: 90%;
+  }
+
+}
+
+
+/* =========================================
+   SINGLE COLUMN
+========================================= */
+
+@media (max-width: 900px) {
+
+  .f1-teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .teams-hero {
+    margin-bottom: 45px;
+  }
+
+  .teams-hero h1 {
+    font-size: 28px;
+  }
+
+  .teams-hero p {
+    font-size: 14px;
+  }
+
+  .f1-team-card {
+    height: 280px;
+  }
+
+  .team-content {
+    padding: 24px;
+  }
+
+  .team-top h2 {
+    font-size: 22px;
+  }
+
+  .team-logo-circle {
+    width: 52px;
+
+    height: 52px;
+  }
+
+  .team-logo-circle img {
+    width: 34px;
+
+    height: 34px;
+  }
+
+  .team-drivers-row {
+    gap: 14px;
+  }
+
+  .driver-info {
+    font-size: 12px;
+  }
+
+  .driver-photo {
+    width: 26px;
+
+    height: 26px;
+  }
+
+  .team-car-container {
+    height: 175px;
+
+    bottom: 8px;
+  }
+
+  .team-car {
+    width: 96%;
+  }
+
+}
